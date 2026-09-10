@@ -1,0 +1,76 @@
+:root {
+  --bg-page: honeydew;
+  --bg-card: aliceblue;
+  --primary: blue;
+  --radius: 12px;
+  --gap: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-page);
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+.pricing-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.price-card {
+  background: var(--bg-card);
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card h3 { margin: 0; font-size: 1.25rem; }
+.price-card .price { font-size: 1.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0; }
+.price-card ul { padding-left: 1.25rem; flex-grow: 1; margin-bottom: 1.5rem; }
+
+/* Tombol */
+.button {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.button:hover { background: darkblue; }
+.button:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+.price-card--featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+}
+
+.badge {
+  background: var(--primary);
+  color: #fff;
+  align-self: flex-start;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  margin: 0 0 0.5rem 0;
+  border-radius: 4px;
+}
+
+
+@media (min-width: 768px) {
+  .pricing-list {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .price-card {
+    flex: 1;
+  }
+}

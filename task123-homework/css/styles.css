@@ -1,0 +1,131 @@
+:root {
+    --color-primary: blue;
+    --color-primary-dark: darkblue;
+    --color-bg: aliceblue;
+    --color-text: midnightblue;
+    --spacing-base: 1.5rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-block: 1rem;
+    border-radius: 8px;
+    margin-inline: auto;
+}
+
+
+.container {
+    width: min(100% - 2rem, 1120px);
+    margin-inline: auto;
+}
+
+.site-header {
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+    padding-block: 1rem;
+    margin-bottom: var(--spacing-base);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap:3rem; 
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: bold;
+    padding: 0.5rem 1rem; 
+    border-radius: 0.5rem; 
+    transition: all 0.2s ease-in-out; 
+}
+
+.nav-link:hover {
+    background-color: var(--color-primary);
+    color: whitesmoke; 
+    text-decoration: none;
+}
+
+.nav-link:focus-visible, .button:focus-visible {
+    outline: 3px solid #f4b000;
+    outline-offset: 3px;
+}
+
+.card {
+    background-color: whitesmoke;
+    padding: var(--spacing-base);
+    border: 1px solid black;
+    border-radius: 12px;
+
+    flex: 1 1 300px;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.card ul {
+    padding-left: var(--spacing-base);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    color: whitesmoke;
+    background-color: var(--color-primary);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-base);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-base);
+}
+
+.site-footer {
+    padding-block: var(--spacing-base);
+    text-align: center;
+    border-top: 1px solid #dbe2ea;
+}
+
+@media (min-width: 768px) {
+    .nav-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .card-list {
+        flex-direction: row;
+    }
+}
